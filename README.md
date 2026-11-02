@@ -47,6 +47,30 @@ forwarded**
 + `__cuid`, the cracked obfuscation layers (string table, 58k pool, 1,612
 identifiers), and the binary-tree checksum "cipher".*
 
+## Production deployment (x.com) — live tamper + token cipher reversed
+
+Beyond the vanilla SDK, the **production Castle build on x.com** was dissected
+(`CASTLE_XCOM_PRODUCTION_2026_11_02.md`, full archive writeup in
+`artifacts/X.Castle.md`):
+
+- **Token cipher fully reversed — Castle ships the decryptor in the same
+  bundle.** `tt()` (encrypt) and `tv()` (decrypt) are exact arithmetic
+  inverses (16-bit-lane bit-mix, `54213·13069 ≡ 1 mod 2^16`); `tv()` decrypts
+  a captured runtime token **byte-for-byte** into TLV + per-field base64
+  chunks (`scripts/xcom/castle-cipher.mjs`, `scripts/xcom/decrypt.mjs`).
+- **13 lies landed verbatim in a valid, submitted token** on the live x.com
+  auth flow (prototype-level tampering): `navigator.webdriver true →
+  undefined`, platform/hwConcurrency/deviceMemory, plugins/mimeTypes/
+  userAgentData, screen 1280×800 → 1920×1080, and **SwiftShader →
+  NVIDIA RTX 3060**. Both baseline and tampered tokens built without errors and
+  were POSTed server-to-server to Castle's `/v1/filter` (`scripts/xcom/tamper.mjs`,
+  `artifacts/xcom/tamper.json`).
+- **Read payload:** 🟢 (token decryptable to plaintext) · **Tamper:** 🟢 (live,
+  13 signals) · **Mint:** 🟢/🟡 (`tt()` runs forward on chosen inputs; caveat:
+  Castle's session-activity accumulation + relay-side IP/TLS context still gate
+  the endpoint). Inner per-field ciphers (`f4/tN/lb/lM`) not reversed;
+  `/v1/filter` risk score still needs the merchant secret key.
+
 ## Repo layout & quick run
 
 ```

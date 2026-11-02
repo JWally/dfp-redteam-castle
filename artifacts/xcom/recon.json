@@ -1,0 +1,86 @@
+[
+  {
+    "target": "https://x.com/i/flow/login",
+    "chunks": [
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/main.565e4e9a.js",
+        "size": 1411260,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      },
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/ondemand.castle.c42626ea.js",
+        "size": 500037,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      }
+    ]
+  },
+  {
+    "target": "https://x.com/i/flow/signup",
+    "chunks": [
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/main.565e4e9a.js",
+        "size": 1411260,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      },
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/ondemand.castle.c42626ea.js",
+        "size": 500037,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      }
+    ]
+  },
+  {
+    "target": "https://x.com/login",
+    "chunks": [
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/main.565e4e9a.js",
+        "size": 1411260,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      },
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/ondemand.castle.c42626ea.js",
+        "size": 500037,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      }
+    ]
+  },
+  {
+    "target": "https://x.com/",
+    "chunks": [
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/main.565e4e9a.js",
+        "size": 1411260,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      },
+      {
+        "url": "https://abs.twimg.com/responsive-web/client-web/ondemand.castle.c42626ea.js",
+        "size": 500037,
+        "hints": [
+          "/createRequestToken/"
+        ],
+        "hgMatch": false
+      }
+    ]
+  }
+]
